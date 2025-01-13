@@ -4,6 +4,12 @@ const bodyParser = require('body-parser');
 const { Configuration, OpenAI } = require('openai');
 
 const app = express();
+app.use(express.json());
+
+const configuration = new Configuration({
+    apiKey: process.env.OPENAI_API_KEY, // 環境変数を利用
+});
+const openai = new OpenAIApi(configuration);
 
 // OpenAI API 設定
 const openai = new OpenAI({

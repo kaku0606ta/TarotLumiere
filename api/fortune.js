@@ -1,4 +1,3 @@
-// api/fortune.js
 const { Configuration, OpenAI } = require("openai");
 
 const openai = new OpenAI({

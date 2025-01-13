@@ -58,24 +58,27 @@
         };
 
         // ChatGPT API を利用して占いメッセージを取得 (フロントエンドからサーバーへリクエスト)
-        fetch("/api/fortune", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ question, card: cardName, position })
-    })
-    .then(response => response.json())
-    .then(data => {
-    if (data.error) {
-        console.error("API Error:", data.error);
-        document.getElementById("fortuneMessage").textContent = "占いの結果を取得できませんでした。";
-    } else {
-        document.getElementById("fortuneMessage").textContent = data.result;
+    fetch('/api/fortune', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ question, card, position })
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error("Network response was not ok");
     }
-    })
-    .catch(error => {
-        console.error("Fetch Error:", error);
-        document.getElementById("fortuneMessage").textContent = "占いの結果を取得できませんでした。";
-    });
+    return response.json();
+})
+.then(data => {
+    // データの処理
+    console.log("占い結果:", data.result);
+})
+.catch(error => {
+    console.error("エラー:", error);
+});
+
 
     </script>
 </body>

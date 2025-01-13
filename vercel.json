@@ -2,22 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "public/**/*",
-      "use": "@vercel/static"
+      "src": "api/fortune.js",  // APIファイルのパス
+      "use": "@vercel/node"      // VercelでNode.jsを使用することを指定
     }
   ],
   "routes": [
     {
-      "src": "/api/fortune",
-      "dest": "/api/fortune.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
+      "src": "/api/fortune",    // リクエストのURLパス
+      "dest": "/api/fortune.js" // 実際のAPIファイル
     }
   ]
 }
+

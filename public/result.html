@@ -77,7 +77,7 @@ fetch('https://tarot-lumiere.vercel.app/api/fortune', {
         console.log("fortuneMessage");
 
         // 結果をページに表示
-        document.getElementById("fortuneMessage").textContent = `占い結果: ${fortuneResult}`;
+        document.getElementById("fortuneMessage").textContent = fortuneMessage;
     })
     .catch(error => {
         console.error("エラー:", error);

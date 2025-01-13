@@ -74,10 +74,10 @@ fetch('https://tarot-lumiere.vercel.app/api/fortune', {
     .then(data => {
         // 占い結果を表示
         const fortuneResult = data.result || "占い結果を取得できませんでした。";
-        console.log("占い結果:", fortuneMessage);
+        console.log("fortuneResult");
 
         // 結果をページに表示
-        document.getElementById("fortuneMessage").textContent = fortuneMessage;
+        document.getElementById("fortuneMessage").textContent = fortuneResult;
     })
     .catch(error => {
         console.error("エラー:", error);

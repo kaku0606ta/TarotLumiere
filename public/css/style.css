@@ -1,0 +1,235 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Kaisei Decol", serif;
+    background-color: #FFE6E6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #fff;
+}
+
+img{max-width: 100%;}
+
+video{max-width: 100%;}
+
+.menu-bar {
+    position: fixed; /* 絶対位置で調整 */
+    top: 50%; /* 縦の中央 */
+    left: 15%; /* 右端から10%の位置 */
+    transform: translateY(-50%); /* 縦方向の中央揃え */
+    font-family: Arial, sans-serif;
+}
+
+.menu-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* 縦方向に配置 */
+    align-items: none; /* アイテムを中央揃え */
+}
+
+.menu-bar ul li {
+    margin: 20px 0;
+}
+
+.menu-bar ul li a {
+    text-decoration: none;
+    color: #7469B6;
+    font-size: 30px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu-bar ul li a:hover {
+    color: #ff009d; /* 明るい色に変化 */
+}
+
+.container {
+    width: 390px;
+    max-width: 100%;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.banna {
+    height: 753px;
+}
+
+.yajirusi{
+    height: 295px;
+    max-width: 100%;
+    background-color: #7469B6;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.yajirusi-text{
+    font-size: 50px;
+    color: #FFE6E6;
+}
+
+.aisatsu{
+    height: 445px;
+    max-width: 100%;
+    background-color: #AD88C6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.youkoso-title{
+    text-align: center;
+    font-size: 20px;
+    color: #FFE6E6;
+}
+
+.youkoso{
+    text-align: center;
+    font-size: 12px;
+    color: #FFE6E6;
+}
+
+.fourtune{
+    display: flex;
+    justify-content: center; /* 水平方向中央揃え */
+    align-items: center; /* 垂直方向中央揃え */
+    flex-direction: column;
+    height: 725px;
+    max-width: 100%;
+    background-color: #E1AFD1
+}
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 0 10px;
+    font-size: 16px;
+    margin-bottom: 30px; /* ボタンとの間にスペースを作成 */
+    font-family: "Kaisei Decol", serif;
+}
+
+button {
+    background-color: #c084c7; /* ボタンの紫色 */
+    color: #FFE6E6;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Kaisei Decol", serif;
+}
+
+button:hover {
+    background-color: #ffc060; /* ホバー時の色 */
+}
+
+.huta{
+    height: 455px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    background-color: #7469B6;
+    padding: 40px;
+}
+
+#cardImage {
+    width: 200px;  /* 画像の幅を小さく */
+    height: auto;   /* 縦横比を保持 */
+    display: block;
+    margin: 20px auto; /* 画像を中央配置 */
+    border-radius: 5%;
+}
+
+.container_result {
+    width: 390px;
+    max-width: 100%;
+    height: 100vh;
+    background-color: #c084c7;;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h2 {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* 占い結果メッセージのボックス */
+.fourtune-box_oya{
+    display: flex;
+    justify-content: center; /* 水平方向中央揃え */
+}
+
+.fortune-box {
+    background-color: white;
+    width: 80%;
+    max-width: 300px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #6B4E71;
+    margin-top: 20px;
+}
+
+.onemorebottun{
+    display: flex;
+    justify-content: center; /* 水平方向中央揃え */
+}
+
+#result-page{
+    button{
+        background-color: transparent;
+        color: white;
+        font-size: 12px;
+        margin-top: 50px;
+        border: none;
+        cursor: pointer;
+        font-weight: normal;
+    }
+}
+
+.position {
+    display: none;
+}
+
+.uranaikekka{
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+}
+
+.question{
+    margin-top: 40px;
+}
+
+.cardname{
+    margin-top: 20px;
+    font-size: 22px;
+}

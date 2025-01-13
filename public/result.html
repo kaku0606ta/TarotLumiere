@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>占い結果</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
+</head>
+<body id="result-page">
+    <div class="menu-bar">
+        <ul>
+            <li><a href="index.html">TOP</a></li>
+        </ul>
+    </div>
+    <div class="container_result">
+        <div class="uranaikekka">占い結果</div>
+        <div class="question" id="question"></div>
+        <div>あなたの引いたカードは…</div>
+        <div class="cardname" id="cardName"></div>
+        <img id="cardImage" src="" alt="Tarot Card">
+        <div class="position" id="position"></div>
+        <div class="fourtune-box_oya"><div class="fortune-box">
+            <div class="Message" id="fortuneMessage"></div>
+        </div></div>
+        <div class="onemorebottun"><button onclick="window.history.back()">もう一度占う</button></div>
+    </div>
+
+    <script>
+        function goBack() {
+            window.location.href = "index.html";
+        }
+
+        // URLパラメータを取得
+        const params = new URLSearchParams(window.location.search);
+        const cardName = params.get("card");
+        const question = params.get("question");
+
+        document.getElementById("question").textContent = `占いたいこと: 「${question}」`;
+        
+        // 正位置 / 逆位置 をランダムで決定
+        const isUpright = Math.random() < 0.5;
+        const position = isUpright ? "正位置" : "逆位置";
+
+        document.getElementById("cardName").textContent = `『${cardName}』 (${position})`;
+        document.getElementById("position").textContent = position;
+
+        // 画像表示（画像のファイル名は tarot_愚者_正位置.png や tarot_愚者_逆位置.png ）
+        // 画像のパスを決定し、デバッグ情報を出力
+        const imagePath = `img/tarot_${cardName}_${position}.png`;
+        console.log("Loading image:", imagePath);  // デバッグ用ログ
+
+        document.getElementById("cardImage").src = imagePath;
+        document.getElementById("cardImage").onerror = function () {
+            console.error("Image not found:", imagePath);
+        };
+
+        // ChatGPT API を利用して占いメッセージを取得 (フロントエンドからサーバーへリクエスト)
+        fetch("/api/fortune", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question, card: cardName, position })
+    })
+    .then(response => response.json())
+    .then(data => {
+    if (data.error) {
+        console.error("API Error:", data.error);
+        document.getElementById("fortuneMessage").textContent = "占いの結果を取得できませんでした。";
+    } else {
+        document.getElementById("fortuneMessage").textContent = data.result;
+    }
+    })
+    .catch(error => {
+        console.error("Fetch Error:", error);
+        document.getElementById("fortuneMessage").textContent = "占いの結果を取得できませんでした。";
+    });
+
+    </script>
+</body>
+</html>

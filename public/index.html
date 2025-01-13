@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Lumiere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="#top">TOP</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#fortune">FORTUNE</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="banna" id="top"><video src="img/main.mp4" autoplay muted loop></div>
+        <div class="yajirusi">
+            <div class="yajirusi-text">↓</div>
+        </div>
+        <div class="aisatsu" id="about">
+            <div class="youkoso-title"> ようこそ占いの館へ</div>
+            <div class="youkoso">
+                <br>恋愛運や仕事運、今日1日の運勢など<br>あなたが占いたいこと、知りたいことを思い浮かべたら<br>占い師に教えてあげよう！
+            </div>
+        </div>
+        <div class="fourtune" id="fortune">
+            <div class="uranaisi"><img src="img/uranaisi.png"></div>
+            <div class="input-section">
+                <input type="text" id="userInput" placeholder="例：今日の運勢" />
+                <button id="uranauButton">占う！</button>
+            </div>
+        </div>
+        <div class="huta">2025卒業制作展<br>注意：内容および作品の転載はお断りします。</div>
+    </div>
+    <script>
+        document.getElementById("uranauButton").addEventListener("click", function() {
+            const userInput = document.getElementById("userInput").value.trim();
+            if (!userInput) {
+                alert("占いたいことを入力してください！");
+                return;
+            }
+
+            const tarotCards = [
+                "愚者", "魔術師", "女教皇", "女帝", "皇帝", "法王", "恋人",
+                "戦車", "力", "隠者", "運命の輪", "正義", "吊るされた男",
+                "死神", "節制", "悪魔", "塔", "星", "月", "太陽", "審判", "世界"
+            ];
+
+            const randomIndex = Math.floor(Math.random() * tarotCards.length);
+            const selectedCard = tarotCards[randomIndex];
+
+            // 結果ページにデータを渡して遷移
+            window.location.href = `result.html?card=${encodeURIComponent(selectedCard)}&question=${encodeURIComponent(userInput)}`;
+        });
+    </script>
+</body>
+</html>

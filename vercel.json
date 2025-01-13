@@ -4,12 +4,16 @@
     {
       "src": "server.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/**/*",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
       "src": "/api/fortune",
-      "dest": "/server.js"
+      "dest": "/api/fortune.js"
     },
     {
       "src": "/(.*)",

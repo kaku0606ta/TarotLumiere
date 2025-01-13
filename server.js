@@ -10,6 +10,11 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
+app.get('/result', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'result.html'));
+});
+
+
 // 静的ファイルの提供
 app.use(express.static('public'));
 app.use(bodyParser.json());

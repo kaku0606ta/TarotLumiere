@@ -58,7 +58,7 @@
         };
 
         // ChatGPT API を利用して占いメッセージを取得 (フロントエンドからサーバーへリクエスト)
-fetch('/api/fortune', {
+fetch('https://tarot-lumiere.vercel.app/api/fortune', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -6,3 +6,7 @@
     "openai": "^4.77.3"
   }
 }
+"scripts": {
+  "start": "node server.js",
+  "vercel-start": "node server.js"
+}

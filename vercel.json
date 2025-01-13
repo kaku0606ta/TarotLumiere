@@ -1,6 +1,15 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "api/fortune.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
-    { "src": "/api/fortune", "dest": "/server.js" }
+    {
+      "src": "/api/fortune",
+      "dest": "/api/fortune.js"
+    }
   ]
 }

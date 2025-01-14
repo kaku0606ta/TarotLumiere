@@ -166,7 +166,7 @@ button:hover {
 .container_result {
     width: 390px;
     max-width: 100%;
-    height: 100vh;
+    height: 800px;
     background-color: #c084c7;;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     overflow: hidden;

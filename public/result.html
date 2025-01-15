@@ -10,11 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Kaisei+HarunoUmi&display=swap" rel="stylesheet">
 </head>
 <body id="result-page">
+    <div class="bg_pattern Polka_v2"></div>
     <div class="menu-bar">
         <ul>
             <li><a href="index.html">TOP</a></li>
         </ul>
     </div>
+
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span></span></label>
+      <div id="overlay">
+        <ul>
+            <li><a href="#top">TOP</a></li>
+        </ul>
+      </div>
+
     <div class="container_result">
         <div class="uranaikekka">占い結果</div>
         <div class="question" id="question"></div>
@@ -26,6 +36,7 @@
             <div class="Message" id="fortuneMessage"></div>
         </div></div>
         <div class="onemorebottun"><button onclick="window.history.back()">もう一度占う</button></div>
+        <div class="huta_result">2025卒業制作展<br>注意：内容および作品の転載はお断りします。</div>
     </div>
 
     <script>
@@ -58,32 +69,24 @@
         };
 
         // ChatGPT API を利用して占いメッセージを取得 (フロントエンドからサーバーへリクエスト)
-fetch('https://tarot-lumiere.vercel.app/api/fortune', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ question, card: cardName, position })
+        fetch("/api/fortune", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question, card: cardName, position })
     })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
-        }
-        return response.json();
-    })
+    .then(response => response.json())
     .then(data => {
-        // 占い結果を表示
-        const fortuneResult = data.result || "占い結果を取得できませんでした。";
-        console.log("fortuneResult");
-
-        // 結果をページに表示
-        document.getElementById("fortuneMessage").textContent = fortuneResult;
+    if (data.error) {
+        console.error("API Error:", data.error);
+        document.getElementById("fortuneMessage").textContent = "占いの結果を取得できませんでした。";
+    } else {
+        document.getElementById("fortuneMessage").textContent = data.result;
+    }
     })
     .catch(error => {
-        console.error("エラー:", error);
-        document.getElementById("fortuneMessage").textContent = "エラーが発生しました。再試行してください。";
+        console.error("Fetch Error:", error);
+        document.getElementById("fortuneMessage").textContent = "占いの結果を取得できませんでした。";
     });
-
 
     </script>
 </body>

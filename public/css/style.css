@@ -332,6 +332,7 @@ h2 {
         z-index: 5;
         cursor: pointer;
         user-select: none;
+        display: block;
       }
       #overlay-button span {
         height: 4px;
@@ -398,6 +399,7 @@ h2 {
         top: 0;  
         left: 0; 
         font-family: "Stardos Stencil", serif;
+        display: block;
         
       }
       #overlay.active {

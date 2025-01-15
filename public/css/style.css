@@ -276,7 +276,7 @@ h2 {
 }
 
 .overlay{
-    display: none;
+    display: none!important;
 }
 
 

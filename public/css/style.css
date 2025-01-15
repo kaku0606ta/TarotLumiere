@@ -287,6 +287,12 @@ h2 {
     display: none;
 }
 
+.lase{
+  padding-bottom: 90px;
+  padding-top: 90px;
+  opacity: 0.5;
+}
+
 
 
 @media screen and (max-width: 1000px) {

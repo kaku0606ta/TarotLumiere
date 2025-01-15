@@ -2,24 +2,41 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Kaisei Decol", serif;
-    background-color: #FFE6E6;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     color: #fff;
+
+    background-color: #ffe6e6;
 }
+
+.bg_pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffe6e6;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  .Polka_v2 {
+    background-image:  radial-gradient(#e2adad 2.3px, transparent 2px), radial-gradient(#e2adad 2.3px, #ffe6e6 2px);
+    background-size: 40px 40px;
+    background-position: 0 0,20px 20px;
+  }
 
 img{max-width: 100%;}
 
 video{max-width: 100%;}
 
 .menu-bar {
-    position: fixed; /* 絶対位置で調整 */
+    position: fixed; /* 絶対位置 */
     top: 50%; /* 縦の中央 */
-    left: 15%; /* 右端から10%の位置 */
-    transform: translateY(-50%); /* 縦方向の中央揃え */
-    font-family: Arial, sans-serif;
+    left: 15%; 
+    transform: translateY(-50%); /* 縦の中央 */
+    font-family: "Stardos Stencil", serif;
 }
 
 .menu-bar ul {
@@ -27,8 +44,8 @@ video{max-width: 100%;}
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column; /* 縦方向に配置 */
-    align-items: none; /* アイテムを中央揃え */
+    flex-direction: column; 
+    align-items: none; 
 }
 
 .menu-bar ul li {
@@ -44,7 +61,7 @@ video{max-width: 100%;}
 }
 
 .menu-bar ul li a:hover {
-    color: #ff009d; /* 明るい色に変化 */
+    color: #ff009d; 
 }
 
 .container {
@@ -58,22 +75,25 @@ video{max-width: 100%;}
 }
 
 .banna {
-    height: 753px;
+    padding-top: 193.3%;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
-.yajirusi{
-    height: 295px;
-    max-width: 100%;
-    background-color: #7469B6;
-    display: flex; 
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.banna video{
+    width:  100%;
+    height: 100%;
+    position:absolute;
+    top: 0px;
 }
 
 .yajirusi-text{
-    font-size: 50px;
-    color: #FFE6E6;
+    font-size: 30px;
+    color: #f0d7a3;
+    z-index: 1;
+    margin-top: -80px;
 }
 
 .aisatsu{
@@ -100,12 +120,23 @@ video{max-width: 100%;}
 
 .fourtune{
     display: flex;
-    justify-content: center; /* 水平方向中央揃え */
-    align-items: center; /* 垂直方向中央揃え */
+    justify-content: center; 
+    align-items: center; 
     flex-direction: column;
     height: 725px;
     max-width: 100%;
     background-color: #E1AFD1
+}
+
+.kaitemiyou{
+    font-size: 23px;
+    padding-bottom: 5px;
+    color: #4d3a4d;
+}
+
+.hukidasi_{
+    width: 320px;
+    padding-bottom: 30px;
 }
 
 .input-section {
@@ -121,12 +152,13 @@ input[type="text"] {
     border-radius: 12px;
     padding: 0 10px;
     font-size: 16px;
-    margin-bottom: 30px; /* ボタンとの間にスペースを作成 */
+    margin-top: 30px;
+    margin-bottom: 30px; 
     font-family: "Kaisei Decol", serif;
 }
 
 button {
-    background-color: #c084c7; /* ボタンの紫色 */
+    background-color: #c084c7; 
     color: #FFE6E6;
     font-size: 16px;
     font-weight: bold;
@@ -139,39 +171,38 @@ button {
 }
 
 button:hover {
-    background-color: #ffc060; /* ホバー時の色 */
+    background-color: #ffc060; /* ホバー */
 }
 
 .huta{
-    height: 455px;
-    max-width: 100%;
+    background-color: #E1AFD1;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     font-size: 12px;
-    background-color: #7469B6;
-    padding: 40px;
+    padding: 20px;
 }
 
 #cardImage {
-    width: 200px;  /* 画像の幅を小さく */
-    height: auto;   /* 縦横比を保持 */
+    width: 200px;  
+    height: auto;   
     display: block;
-    margin: 20px auto; /* 画像を中央配置 */
+    margin: 20px auto; 
     border-radius: 5%;
 }
 
 .container_result {
     width: 390px;
     max-width: 100%;
-    height: 1070px;
-    background-color: #c084c7;;
+    height: 800x;
+    background-color: #c084c7;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     overflow: hidden;
     padding: 20px;
     box-sizing: border-box;
+    font-size: 14px;
 }
 
 h2 {
@@ -183,7 +214,7 @@ h2 {
 /* 占い結果メッセージのボックス */
 .fourtune-box_oya{
     display: flex;
-    justify-content: center; /* 水平方向中央揃え */
+    justify-content: center; 
 }
 
 .fortune-box {
@@ -200,7 +231,7 @@ h2 {
 
 .onemorebottun{
     display: flex;
-    justify-content: center; /* 水平方向中央揃え */
+    justify-content: center; 
 }
 
 #result-page{
@@ -208,7 +239,7 @@ h2 {
         background-color: transparent;
         color: white;
         font-size: 12px;
-        margin-top: 50px;
+        margin-top: 30px;
         border: none;
         cursor: pointer;
         font-weight: normal;
@@ -233,3 +264,157 @@ h2 {
     margin-top: 20px;
     font-size: 22px;
 }
+
+.huta_result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 100px;
+}
+
+.overlay{
+    display: none;
+}
+
+
+
+@media screen and (max-width: 1000px) {
+    .menu-bar {
+        display: none;/*非表示*/
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: "Kaisei Decol", serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        color: #fff;
+    
+        background-color: #ffe6e6;
+        animation: bugfix infinite 1s;
+        -webkit-animation: bugfix infinite 1s;
+      }
+
+      @keyframes bugfix {
+        from {
+          padding: 0;
+        }
+        to {
+          padding: 0;
+        }
+      }
+      @-webkit-keyframes bugfix {
+        from {
+          padding: 0;
+        }
+        to {
+          padding: 0;
+        }
+      }
+      #overlay-button {
+        position: fixed; /* 絶対位置 */
+        right: 2em;
+        top: 3em;
+        z-index: 5;
+        cursor: pointer;
+        user-select: none;
+      }
+      #overlay-button span {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        position: relative;
+        display: block;
+        transition: all .2s ease-in-out;
+      }
+      #overlay-button span:before {
+        top: -10px;
+        visibility: visible;
+      }
+      #overlay-button span:after {
+        top: 10px;
+      }
+      #overlay-button span:before, #overlay-button span:after {
+        height: 4px;
+        width: 35px;
+        border-radius: 2px;
+        background-color: #ffffff;
+        position: absolute;
+        content: "";
+        transition: all .2s ease-in-out;
+      }
+      #overlay-button:hover span, #overlay-button:hover span:before, #overlay-button:hover span:after {
+        background: #ffffff;
+      }
+      
+      input[type=checkbox] {
+        display: none; 
+        
+      }
+      
+      input[type=checkbox]:checked ~ #overlay {
+        visibility: visible; 
+      }
+      
+      input[type=checkbox]:checked ~ #overlay-button:hover span, input[type=checkbox]:checked ~ #overlay-button span {
+        background: transparent;
+        
+        
+      }
+      input[type=checkbox]:checked ~ #overlay-button span:before {
+        transform: rotate(45deg) translate(7px, 7px);
+      
+      }
+      input[type=checkbox]:checked ~ #overlay-button span:after {
+        transform: rotate(-45deg) translate(7px, -7px);
+      
+      
+      }
+      
+
+      
+      #overlay {
+        height: 100vh;
+        width: 100vw;
+        background: #7469B6;
+        z-index: 3;
+        visibility: hidden; 
+        position: fixed;
+        top: 0;  
+        left: 0; 
+        font-family: "Stardos Stencil", serif;
+        
+      }
+      #overlay.active {
+      
+      }
+      #overlay ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        height: 100vh;
+        padding-left: 0;
+        list-style-type: none;
+      }
+      #overlay ul li {
+        padding: 1em;
+      }
+      #overlay ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.5em;
+      }
+      #overlay ul li a:hover {
+        color: #ffc060!important;
+      }
+
+    }
